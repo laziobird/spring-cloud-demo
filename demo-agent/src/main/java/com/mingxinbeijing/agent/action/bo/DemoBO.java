@@ -1,4 +1,4 @@
-package com.mingxinbeijing.action.bo;
+package com.mingxinbeijing.agent.action.bo;
 
 public class DemoBO {
 

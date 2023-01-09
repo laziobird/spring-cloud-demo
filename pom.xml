@@ -10,7 +10,9 @@
 	<modules>
 		<module>demo-common</module>
 		<module>demo-dao</module>
+		<module>demo-agent</module>			
 		<module>demo-admin</module>
+	
 	</modules>
 
 	<parent>
@@ -41,7 +43,8 @@
 
 		<demo-common.version>1.0-SNAPSHOT</demo-common.version>
 		<demo-dao.version>1.0-SNAPSHOT</demo-dao.version>
-
+		<demo-agent.version>1.0-SNAPSHOT</demo-agent.version>
+		
 	</properties>
 
 	<dependencies>
@@ -84,18 +87,24 @@
 				<scope>import</scope>
 			</dependency>
 
-			<!--mall通用模块-->
+			<!--通用模块-->
 			<dependency>
 				<groupId>com.laziobird</groupId>
 				<artifactId>demo-common</artifactId>
 				<version>${demo-common.version}</version>
 			</dependency>
-			<!--mall中DAO生成模块-->
+			<!--DAO生成模块-->
 			<dependency>
 				<groupId>com.laziobird</groupId>
 				<artifactId>demo-dao</artifactId>
 				<version>${demo-dao.version}</version>
 			</dependency>
+			<!--Agent生成模块-->
+			<dependency>
+				<groupId>com.laziobird</groupId>
+				<artifactId>demo-agent</artifactId>
+				<version>${demo-agent.version}</version>
+			</dependency>			
 			<!--MyBatis分页插件starter-->
 			<dependency>
 				<groupId>com.github.pagehelper</groupId>

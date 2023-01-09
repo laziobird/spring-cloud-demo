@@ -5,7 +5,6 @@ import java.util.Date;
 
 public class Category implements Serializable {
     private Integer id;
-
     /**
      * 分类ID
      *

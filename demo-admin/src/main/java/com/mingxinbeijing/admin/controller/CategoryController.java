@@ -20,6 +20,7 @@ import com.mingxinbeijing.admin.dto.CategorySortParam;
 import com.mingxinbeijing.admin.dto.CategoryVO;
 import com.mingxinbeijing.admin.dto.PageParam;
 import com.mingxinbeijing.admin.service.CategoryService;
+import com.mingxinbeijing.agent.tool.HttpTool;
 import com.mingxinbeijing.common.api.CommonPage;
 import com.mingxinbeijing.common.api.CommonResult;
 import com.mingxinbeijing.dao.model.Category;

@@ -1,9 +1,8 @@
- package com.mingxinbeijing.action.impl;
+ package com.mingxinbeijing.agent.action.impl;
 
 import com.google.gson.Gson;
 
 public class DemoAction<T> {
-
 	public T jsonToObject(String json,Class<T> classOfT) {
         //成功后的回调
         Gson gson = new Gson();

@@ -1,4 +1,4 @@
-package com.mingxinbeijing.tool;
+package com.mingxinbeijing.agent.tool;
 
 import java.io.IOException;
 
@@ -7,9 +7,9 @@ import javax.validation.constraints.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mingxinbeijing.action.bo.DemoBO;
-import com.mingxinbeijing.action.impl.DemoAction;
-import com.mingxinbeijing.admin.config.AdminConstant;
+import com.mingxinbeijing.agent.action.bo.DemoBO;
+import com.mingxinbeijing.agent.action.impl.DemoAction;
+import com.mingxinbeijing.agent.config.AgentConstant;
 
 import cn.hutool.core.util.StrUtil;
 import okhttp3.Call;
@@ -33,7 +33,7 @@ public class AsyncHttpCallBack implements Callback {
 		
 		
 		//根据返回的URl 请求响应的Action
-		if(StrUtil.contains(response.request().url().toString(), AdminConstant.DEMO_URL)) {
+		if(StrUtil.contains(response.request().url().toString(), AgentConstant.DEMO_URL)) {
 			String testStr = "{\n"
 					+ "    \"lessonId\": \"111\",\n"
 					+ "    \"lessonName\": \"17777788888\" \n"

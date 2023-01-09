@@ -1,4 +1,4 @@
-package com.mingxinbeijing.tool;
+package com.mingxinbeijing.agent.tool;
 
 import java.io.IOException;
 
