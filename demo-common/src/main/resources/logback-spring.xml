@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration>
+    <!--引用默认日志配置-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <!--使用默认的控制台日志输出实现-->
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    <!--应用名称-->
+    <springProperty scope="context" name="APP_NAME" source="spring.application.name" defaultValue="springBoot"/>
+    <!--日志文件保存路径  默认给绝对地址 ，还可以通过设置 java -Dlogback_home="c:\\logs"  -->
+    <property name="LOG_FILE_PATH" value="./debug"/>
+ 
+
+    <!--DEBUG日志输出到文件-->
+    <appender name="FILE_DEBUG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--输出DEBUG以上级别日志-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder>
+            <!--设置为默认的文件日志格式-->
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--设置文件命名格式-->
+            <fileNamePattern>${LOG_FILE_PATH}/${APP_NAME}-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <!--设置日志文件大小，超过就重新生成文件，默认10M-->
+            <maxFileSize>${LOG_FILE_MAX_SIZE:-10MB}</maxFileSize>
+            <!--日志文件保留天数，默认30天-->
+            <maxHistory>${LOG_FILE_MAX_HISTORY:-30}</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!--ERROR日志输出到文件-->
+    <appender name="FILE_ERROR"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--只输出ERROR级别的日志-->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <!--设置为默认的文件日志格式-->
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--设置文件命名格式-->
+            <fileNamePattern>${LOG_FILE_PATH}/error/${APP_NAME}-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <!--设置日志文件大小，超过就重新生成文件，默认10M-->
+            <maxFileSize>${LOG_FILE_MAX_SIZE:-10MB}</maxFileSize>
+            <!--日志文件保留天数，默认30天-->
+            <maxHistory>${LOG_FILE_MAX_HISTORY:-30}</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+
+
+
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%date{yyyy-MM-dd HH:mm:ss} |%-5level |%thread |%file:%line |%logger | %msg%n"/>
+
+    <!--输出到控制台-->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!--此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息-->
+        <!-- 例如：如果此处配置了INFO级别，则后面其他位置即使配置了DEBUG级别的日志，也不会被输出 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+
+        <encoder>          
+            <Pattern>${CONSOLE_LOG_PATTERN}</Pattern>         
+            <charset>UTF-8</charset>
+        </encoder>
+ 
+    </appender>
+
+
+
+
+
+
+    <!--控制框架输出日志-->
+    <logger name="org.slf4j" level="INFO"/>
+    <logger name="springfox" level="INFO"/>
+
+
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.hibernate.validator" level="INFO"/>
+    
+    <logger name="com.huanke.cloud.education.dao.mapper" level="DEBUG" />
+    <logger name="com.huanke.cloud.education.admin.controller" level="INFO"/>
+    <logger name="com.huanke.cloud.education.admin.service.impl" level="INFO"/>
+
+
+
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE_DEBUG"/>
+        <appender-ref ref="FILE_ERROR"/>
+    </root>
+
+</configuration>

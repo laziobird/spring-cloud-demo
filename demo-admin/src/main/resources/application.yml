@@ -1,0 +1,7 @@
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
+feign:
+  okhttp:
+    enabled: true
