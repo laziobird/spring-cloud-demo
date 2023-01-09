@@ -49,13 +49,13 @@ mall
 Linux 环境部署
 
 - 初始化数据库
-> 用的Mysql ，源代码 Document 下导入 _education.sql  _
+> 用的Mysql ，源代码 `document`目录下导入 `education.sql`
 
 - 本地启动Consul，注册微服务
 > [https://kingfree.gitbook.io/consul/getting-started/install](https://kingfree.gitbook.io/consul/getting-started/install)
 
 - IDE 启动
-> SpringBoot 找到 _AdminApplication.java _启动Web服务
+> SpringBoot 找到 `AdminApplication.java` 启动Web服务
 
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/25529450/1673264084253-e2e5eb8f-dd7f-4291-8fee-c3d18689785a.png#averageHue=%23eaeae9&clientId=u004af954-e21a-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=182&id=u1e7cb6fc&margin=%5Bobject%20Object%5D&name=image.png&originHeight=364&originWidth=2422&originalType=binary&ratio=1&rotation=0&showTitle=false&size=568162&status=done&style=none&taskId=ub976d863-3342-496c-9e90-b6b40236ddf&title=&width=1211)
 ## 运行效果展示
