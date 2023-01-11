@@ -36,5 +36,4 @@ public class DemoBO {
 	public String toString() {
 		return "DemoBO [lessonId=" + lessonId + ", lessonName=" + lessonName + "]";
 	}
-
 }
