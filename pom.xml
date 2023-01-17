@@ -10,7 +10,8 @@
 	<modules>
 		<module>demo-common</module>
 		<module>demo-dao</module>
-		<module>demo-agent</module>			
+		<module>demo-agent</module>
+		<module>demo-redis</module>
 		<module>demo-admin</module>
 	
 	</modules>
@@ -40,10 +41,12 @@
 		<mybatis.version>3.5.9</mybatis.version>
 		<mysql-connector.version>8.0.29</mysql-connector.version>
 		<spring-data-commons.version>2.5.2</spring-data-commons.version>
+		<commons-pool2.version>2.9.0</commons-pool2.version>
 
 		<demo-common.version>1.0-SNAPSHOT</demo-common.version>
 		<demo-dao.version>1.0-SNAPSHOT</demo-dao.version>
 		<demo-agent.version>1.0-SNAPSHOT</demo-agent.version>
+		<demo-redis.version>1.0-SNAPSHOT</demo-redis.version>
 		
 	</properties>
 
@@ -104,7 +107,14 @@
 				<groupId>com.laziobird</groupId>
 				<artifactId>demo-agent</artifactId>
 				<version>${demo-agent.version}</version>
-			</dependency>			
+			</dependency>
+
+			<!--Redis生成模块-->
+			<dependency>
+				<groupId>com.laziobird</groupId>
+				<artifactId>demo-redis</artifactId>
+				<version>${demo-redis.version}</version>
+			</dependency>
 			<!--MyBatis分页插件starter-->
 			<dependency>
 				<groupId>com.github.pagehelper</groupId>
@@ -153,6 +163,17 @@
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-commons</artifactId>
 				<version>${spring-data-commons.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-redis</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-pool2</artifactId>
+				<version>${commons-pool2.version}</version>
 			</dependency>
 
 		</dependencies>

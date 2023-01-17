@@ -26,4 +26,11 @@ public class PageParam {
 		this.pageSize = pageSize;
 	}
 
+	@Override
+	public String toString() {
+		return "PageParam{" +
+				"pageNum=" + pageNum +
+				", pageSize=" + pageSize +
+				'}';
+	}
 }
