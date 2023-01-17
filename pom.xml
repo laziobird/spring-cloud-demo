@@ -13,6 +13,7 @@
 		<module>demo-agent</module>
 		<module>demo-redis</module>
 		<module>demo-admin</module>
+		<module>demo-search</module>
 	
 	</modules>
 
