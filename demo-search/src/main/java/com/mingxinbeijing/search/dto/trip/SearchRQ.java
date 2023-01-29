@@ -1,4 +1,4 @@
-package com.mingxinbeijing.search.dto;
+package com.mingxinbeijing.search.dto.trip;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;

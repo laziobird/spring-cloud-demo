@@ -1,6 +1,9 @@
 package com.mingxinbeijing.search.service;
 
-import com.mingxinbeijing.search.dto.CategoryParam;
+import com.mingxinbeijing.search.dto.trip.SearchRQ;
+import com.mingxinbeijing.search.dto.trip.SearchRS;
+
+import java.util.Optional;
 
 /**
  * 
@@ -9,8 +12,8 @@ import com.mingxinbeijing.search.dto.CategoryParam;
  */
 public interface SupplyService {
 
-	int insertCagegory(CategoryParam categoryDto);
+	Optional<SearchRS> search(SearchRQ req);
 
 
-	
+
 }

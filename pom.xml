@@ -44,6 +44,9 @@
 		<spring-data-commons.version>2.5.2</spring-data-commons.version>
 		<commons-pool2.version>2.9.0</commons-pool2.version>
 
+
+		<commons.lang.version>3.12.0</commons.lang.version>
+
 		<demo-common.version>1.0-SNAPSHOT</demo-common.version>
 		<demo-dao.version>1.0-SNAPSHOT</demo-dao.version>
 		<demo-agent.version>1.0-SNAPSHOT</demo-agent.version>
@@ -176,6 +179,13 @@
 				<artifactId>commons-pool2</artifactId>
 				<version>${commons-pool2.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons.lang.version}</version>
+			</dependency>
+
 
 		</dependencies>
 	</dependencyManagement>
