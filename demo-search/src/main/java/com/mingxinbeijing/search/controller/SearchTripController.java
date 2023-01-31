@@ -44,7 +44,8 @@ public class SearchTripController {
     public CommonResult<CommonPage<Integer>> search(@RequestBody SearchRQ req) throws InterruptedException, ExecutionException {
 
         ConcurrentHashMap<String, Optional<SearchRS>> searchMap = new ConcurrentHashMap();
-        //TODO 1、走缓存
+        //TODO 1、走缓存  2、实时获取，异步消息队列缓存
+
         //TODO 2、看是否短时间类  10s 重复搜索
 
         //TODO 3 都不是，实时请求，异步合并结果
